@@ -1,0 +1,24 @@
+/* Login */
+.login-page {
+  background: none repeat scroll 0 0 #FEFEFE;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #EEEEEE;
+  color: #555555;
+  padding: 30px;
+}
+.login-page label {
+  font-weight: normal;
+}
+/* Sign Up */
+.signup_page {
+  background: none repeat scroll 0 0 #FEFEFE;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #EEEEEE;
+  color: #555555;
+  padding: 30px;
+}
+.signup-page label {
+  font-weight: normal;
+}

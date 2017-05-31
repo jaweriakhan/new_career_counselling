@@ -1,0 +1,161 @@
+﻿@model List<Career_Counselling.Models.Question>
+
+
+<!-- === BEGIN CONTENT === -->
+<div id="content">
+    <div class="container background-white">
+        <form action="/Home/quizhere3" method="post">
+            @if (@Model != null)
+            {
+                <div class="row margin-vert-30">
+                    <!-- Main Column -->
+                    <div class="col-md-12">
+
+
+                        <div class="container">
+
+                            <h3><span class="label label-warning" id="qid"></span> @Model[0].statement</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-xs-3 col-xs-offset-5">
+                                <div id="loadbar" style="display: none;">
+                                    <div class="blockG" id="rotateG_01"></div>
+                                    <div class="blockG" id="rotateG_02"></div>
+                                    <div class="blockG" id="rotateG_03"></div>
+                                    <div class="blockG" id="rotateG_04"></div>
+                                    <div class="blockG" id="rotateG_05"></div>
+                                    <div class="blockG" id="rotateG_06"></div>
+                                    <div class="blockG" id="rotateG_07"></div>
+                                    <div class="blockG" id="rotateG_08"></div>
+                                </div>
+                            </div>
+
+                            <div class="quiz" id="quiz" data-toggle="buttons">
+                                <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>A: </b></label></span> <input type="radio" name="q_answer" value="A">@Model[0].A</label>
+                                <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>B: </b></label></span> <input type="radio" name="q_answer" value="B">@Model[0].B</label>
+                                <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>C: </b></label></span> <input type="radio" name="q_answer" value="C">@Model[0].C</label>
+                                <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>D: </b></label></span> <input type="radio" name="q_answer" value="D">@Model[0].D</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-muted">
+                            <input type="hidden" name="first1" value="@Model[0].answer" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+
+                        <div class="container">
+
+                            <h3><span class="label label-warning" id="qid"></span> @Model[1].statement</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-xs-3 col-xs-offset-5">
+                                <div id="loadbar" style="display: none;">
+                                    <div class="blockG" id="rotateG_01"></div>
+                                    <div class="blockG" id="rotateG_02"></div>
+                                    <div class="blockG" id="rotateG_03"></div>
+                                    <div class="blockG" id="rotateG_04"></div>
+                                    <div class="blockG" id="rotateG_05"></div>
+                                    <div class="blockG" id="rotateG_06"></div>
+                                    <div class="blockG" id="rotateG_07"></div>
+                                    <div class="blockG" id="rotateG_08"></div>
+                                </div>
+                            </div>
+
+                            <div class="quiz" id="quiz" data-toggle="buttons">
+                                <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>A: </b></label></span> <input type="radio" name="q_answer1" value="A">@Model[1].A</label>
+                                <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>B: </b></label></span> <input type="radio" name="q_answer1" value="B">@Model[1].B</label>
+                                <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>C: </b></label></span> <input type="radio" name="q_answer1" value="C">@Model[1].C</label>
+                                <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>D: </b></label></span> <input type="radio" name="q_answer1" value="D">@Model[1].D</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-muted">
+                           <input type="hidden" name="second2" value="@Model[1].answer" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+
+                        <div class="container">
+
+                            <h3><span class="label label-warning" id="qid"></span> @Model[2].statement</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-xs-3 col-xs-offset-5">
+                                <div id="loadbar" style="display: none;">
+                                    <div class="blockG" id="rotateG_01"></div>
+                                    <div class="blockG" id="rotateG_02"></div>
+                                    <div class="blockG" id="rotateG_03"></div>
+                                    <div class="blockG" id="rotateG_04"></div>
+                                    <div class="blockG" id="rotateG_05"></div>
+                                    <div class="blockG" id="rotateG_06"></div>
+                                    <div class="blockG" id="rotateG_07"></div>
+                                    <div class="blockG" id="rotateG_08"></div>
+                                </div>
+                            </div>
+
+                            <div class="quiz" id="quiz" data-toggle="buttons">
+                                <label class="element-animation1 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>A: </b></label></span> <input type="radio" name="q_answer2" value="A">@Model[2].A</label>
+                                <label class="element-animation2 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>B: </b></label></span> <input type="radio" name="q_answer2" value="B">@Model[2].B</label>
+                                <label class="element-animation3 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>C: </b></label></span> <input type="radio" name="q_answer2" value="C">@Model[2].C</label>
+                                <label class="element-animation4 btn btn-lg btn-primary btn-block"><span class="btn-label"><label class="option"><b>D: </b></label></span> <input type="radio" name="q_answer2" value="D">@Model[2].D</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-muted">
+                            <input type="hidden" name="third3" value="@Model[2].answer" />
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="row">
+                <div class="col-lg-8"></div>
+
+
+                <div class="col-lg-4 text-right">
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- End Main Column -->
+</div>
+
+<!-- === END CONTENT === -->
+
+<script type="text/javascript">
+    $(function () {
+        var loading = $('#loadbar').hide();
+        $(document)
+        .ajaxStart(function () {
+            loading.show();
+        }).ajaxStop(function () {
+            loading.hide();
+        });
+
+        $("label.btn").on('click', function () {
+            var choice = $(this).find('input:radio').val();
+            $('#loadbar').show();
+            $('#quiz').fadeOut();
+            setTimeout(function () {
+                $("#answer").html($(this).checking(choice));
+                $('#quiz').show();
+                $('#loadbar').fadeOut();
+                /* something else */
+            }, 1500);
+        });
+
+        $ans = 3;
+
+        $.fn.checking = function (ck) {
+            if (ck != $ans)
+                return 'INCORRECT';
+            else
+                return 'CORRECT';
+        };
+    });
+
+
+
+</script>
+<!-- End JS -->

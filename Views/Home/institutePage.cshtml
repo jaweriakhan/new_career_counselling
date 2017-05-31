@@ -1,0 +1,238 @@
+﻿
+@model List<Career_Counselling.Models.Institute>
+
+<head>
+   
+    <title>Institute</title>
+
+</head>
+<body
+    <!-- === BEGIN CONTENT === -->
+    <div id="content">
+        <div class="container background-white">
+            <div class="row margin-vert-30">
+                <!-- Main Column -->
+
+
+
+
+                <div class="container content">
+                    <div class="row">
+
+
+                        <div class="col-md-4 col-sm-4">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 style="color: white">Search Criteria</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form action="/Home/searchInstitute" method="post" >
+
+                                        <p>Refine criteria below for new results.</p>
+                                        <div class="form-group">
+
+                                            <label for="state">Degree</label>
+                                            <select name="degree"  class="form-control">
+                                                <option >All Degrees</option>
+                                                <option >Chemical Engineering</option>
+                                                <option >Mechanical Engineering</option>
+                                                <option >Civil Engineering</option>
+                                                <option >Computer Engineering</option>
+                                                <option >Electrical Engineering</option>
+                                                <option >Petrolium and Gas Engineering</option>
+                                                <option >Textile Engineering</option>
+                                                <option >Industry and Manufacturing Engineering</option>
+                                                <option >Environmental Engineering</option>
+                                                <option >BS (Physics)</option>
+                                                <option >BS (Mathematics)</option>
+                                                <option >BS (Chemistry)</option>
+                                                <option >BS (Computer Science)</option>
+                                                <option >BS (Information Technology)</option>
+                                                <option >BS (Software Engineering)</option>
+                                                <option >BS (Space Sciences)</option>
+                                                <option >BS (High Energy Physics)</option>
+                                                <option >BS (Computational Physics)</option>
+                                                <option >BS (English)</option>
+                                                <option >BS (Political Science)</option>
+                                                <option >BS (Communication Studies)</option>
+                                                <option >BS (Philosophy)</option>
+                                                <option >BS (Geography)</option>
+                                                <option >BBA</option>
+                                                <option >BS (Statistics)</option>
+                                                <option >B.Com</option>
+                                                <option >BBIT(Hons)</option>
+                                                <option >BSc (Accounting)</option>
+                                                <option >BBS (Bacheler of Business Studies)</option>
+                                                <option >BS (Economics)</option>
+                                                <option >BS (Mass Communication)</option>
+                                                <option >MBBS</option>
+                                                <option >D-Pharmacy</option>
+                                                <option >BS (Botany)</option>
+                                                <option >BS (Zoology)</option>
+                                                <option >BS (Biochemistry)</option>
+                                                <option >BS (Physiotherapy)</option>
+                                                <option >Dr of Nutrition Science</option>
+                                                <option >BS (Nursing)</option>
+                                                <option >BS (Microbiology)</option>
+                                                <option >BS (Agriculture)</option>
+                                                <option >BS (Biotechnology)</option>
+                                                <option >BS (Psychology)</option>
+                                                <option >BS (Biogenetics)</option>
+                                                <option >BDS (Bachelor of Dental Surgery)</option>
+                                                <option >BS (Doctor of Vaterinary Medicine)</option>
+                                                <option >BS (Environmental Science)</option>
+                                                <option >LLB (5 Years)</option>
+                                                <option >BA (Journalism)</option>
+                                                <option >B.Architecture</option>
+                                                <option >BFA Painting</option>
+                                                <option >BA (Fine Arts)</option>
+                                                <option >BA (Hons)History</option>
+                                                <option >BFA Graphic Design</option>
+
+
+
+
+
+                                            </select>
+                                            <div id="proximityGroup" style="display:none;">
+                                                <br />
+
+
+                                                <div id="slider-range"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="state">Location</label>
+                                            <select name="region" class="form-control">
+                                                <option >All Pakistan</option>
+                                                <option >Punjab</option>
+                                                <option >Balochistan</option>
+                                                <option >Sindh</option>
+                                                <option >Khyber Pakhtunkhwa</option>
+                                                <option >Gilgit–Baltistan</option>
+                                                <option >Azad Kashmir</option>
+                                                <option >Islamabad Capital</option>
+                                            </select>
+                                            <div id="proximityGroup" style="display:none;">
+                                                <br />
+
+
+                                                <div id="slider-range"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="state">Discipline</label>
+                                            <select name="disciplin" class="form-control">
+                                                <option >General</option>
+                                                <option >Engineering & Technology</option>
+                                                <option >Medical</option>
+                                            </select>
+                                            <div id="proximityGroup" style="display:none;">
+                                                <br />
+
+
+                                                <div id="slider-range"></div>
+                                            </div>
+                                        </div>
+
+                                        <label for="state">Sector</label>
+                                        <select name="sector" class="form-control">
+                                            <option >Both</option>
+                                            <option >Public</option>
+                                            <option >Private</option>
+                                        </select>
+                                      
+
+                                            <!--  <div class="checkbox">
+              <label for="Public">
+                  <input id="Public" type="checkbox" name="sectorPublic" class="CheckBox" />
+                  Public
+              </label><br>
+              <label for="PrivateNon">
+                  <input id="PrivateNon" type="checkbox" name="sectorPrivate" class="CheckBox" />
+                  Private
+              </label><br>
+          </div> -->
+
+
+                                            <hr>
+
+                                            <div class="text-center">
+                                                <button class="btn btn btn-detail" style="background-color:#33747a"><h4 style="color: white">Update Search Results</h4></button>
+                                            </div>
+                                      </form>  </div>  
+                           
+                                         </div>
+                        </div>
+
+
+
+
+                        <div class="post col-md-8 col-sm-8">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 style="color: white" >Institutes</h3>
+                                </div>
+
+                                <div class="container">
+
+                                    <div class="row" style="margin-top:5px">
+                                    @if( @Model !=null)
+                                    {     <hr>                                                                                                                   
+                                        foreach (var li in @Model)
+                                        { 
+                                
+                                          <div class="col-sm-3">
+                                            <img src="@li.logo" width="100px" height="100px" border="1px" class="img-responsive" style="margin-top:5px;">
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <h3>@li.name</h3>
+                                            <span>@li.city, </span>
+                                            <span>@li.province </span>
+                                            <br><span>Catagory:</span><span> @li.discipline  </span>
+                                            <br><span>Sector:</span><span> @li.sector  </span>
+
+                                            <br>
+                                            <a href="@li.url">Read More</a>
+                                            <hr>
+                                        </div>
+                                      
+                                        }
+                                    }
+                                    </div>
+                                    <hr>
+                                   
+                                   
+
+                                </div>
+                            </div>
+                            
+
+
+
+                            </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <!-- End Main Column -->
+            </div>
+        </div>
+    </div>
+    <!-- === END CONTENT === -->
+
+
+</body>
+</html>
+

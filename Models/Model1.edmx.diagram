@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d255635daa248b09036a5702ab4094e" Name="Diagram1">
+        <EntityTypeShape EntityType="myoyDBModel.AcademicInfo" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Admin" Width="1.5" PointX="8.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Degree" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Hobby" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Institute" Width="1.5" PointX="5.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.InstituteDegree" Width="1.5" PointX="8" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Interest" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Question" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.Quiz" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.User" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="myoyDBModel.UserHistory" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="myoyDBModel.FK_AcademicInfo_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_InstituteDegree_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_Hobby_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_InstituteDegree_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_Interest_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_Questions_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_UserHistory_ToTable_1" ManuallyRouted="false" />
+        <AssociationConnector Association="myoyDBModel.FK_UserHistory_ToTable" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,135 @@
+﻿
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-30">
+            <!-- Main Column -->
+            @if (Session["userName"] == null)
+            {
+                <div class="login-header margin-bottom-30">
+                    <p>First you have to Login to your account <h2><a href="~/Home/login"> Login</a></h2></p>
+
+                    <p>Don't have an account?<h2><a href="~/Home/signup"> Sign up</a> </h2>here.</p>
+                </div>
+            }
+            else
+            {
+
+                <div class="col-md-12">
+                    <h2>Academic Information</h2>
+                    <form action="/Home/academicRecord" method="post">
+                        <h2>Metric</h2>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Metric Marks</label>
+                                <input placeholder="" required="required" name="mt" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+
+                        <label><h3>Physics</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Physics</label>
+                                <input name="mP" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Chemistry</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Chemistry</label>
+                                <input name="mC" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Mathematics</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Mathematics</label>
+                                <input name="mM" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Biology/Computer Science</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Biology/Computer Science</label>
+                                <input name="mBC" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+
+                        <label><h2>Intermediate</h2></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select name="pre" class="form-control" id="sel1">
+                                        <option value="1">FSc Pre-Engineering</option>
+                                        <option value="2">FSc Pre-Medical</option>
+                                        <option value="3">ICS</option>
+                                    </select>
+                                </div>
+
+                                <label>Percentage of Intermediate Marks</label>
+                                <input name="fT" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Physics</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Physics</label>
+                                <input name="fP" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Chemistry/Computer Science</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Chemistry/Computer Science</label>
+                                <input name="fCC" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>Mathematics/Biology</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of Mathematics/Biology</label>
+                                <input name="fMB" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+                        <label><h3>English</h3></label>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Percentage of  English</label>
+                                <input name="fE" required="required" class="form-control margin-bottom-20" type="number">
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="row">
+                            <div class="col-lg-8"></div>
+
+
+                            <div class="col-lg-4 text-right">
+                                <button class="btn btn-primary" type="submit">Next</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+                <div class="col-md-2"></div>
+
+
+            }
+
+            <!-- End Main Column -->
+        </div>
+    </div>
+
+    <!-- === END CONTENT === -->

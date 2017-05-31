@@ -1,0 +1,315 @@
+﻿@model List<Career_Counselling.Models.Question>
+<head>
+
+    <!-- Title -->
+
+    <title>Manage Quiz</title>
+</head>
+<body>
+    <div id="content">
+        <div class="container background-white">
+            <div class="row margin-vert-40">
+
+                <div class="col-md-12">
+                    <h2 class="margin-bottom-30">Manage Quiz</h2>
+                    <!-- Accordion -->
+                    <!-- Tab v3 -->
+                    <div class="row tabs">
+                        <div class="col-sm-2">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#Add" data-toggle="tab">
+                                        Add Quiz
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#Delete" data-toggle="tab">
+                                        Delete Quiz
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#Update" data-toggle="tab">
+                                        Update Quiz
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- Disclaimer -->
+                        <div class="col-sm-7">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="Add">
+
+                                    <h3><class style="color:#33747a"><b>ADD Quiz</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/AddQuiz" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Category</label>
+                                                <div class="col-md-9">
+                                                    <select name="catagorySelected" class="form-control">
+                                                        <option>Mathematics</option>
+                                                        <option>Chemistry</option>
+                                                        <option>Physics</option>
+                                                        <option>Biological Sciences</option>
+                                                        <option>Logical Reasoning</option>
+                                                        <option>Analytical Thinking</option>
+                                                        <option>Computer Science</option>
+                                                        <option>Problem Solving</option>
+                                                        <option>General Knowledge</option>
+                                                        <option>Communication Skills</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">Question</label>
+                                                <div class="col-md-9">
+                                                    <input id="name" name="question" type="text" placeholder="Question Statement" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Email input-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Adress">Option A</label>
+                                                <div class="col-md-9">
+                                                    <input name="A" type="text" placeholder="Option A" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="City">Option B</label>
+                                                <div class="col-md-9">
+                                                    <input  name="B" type="text" placeholder="Option B" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">Option C</label>
+                                                <div class="col-md-9">
+                                                    <input name="C" type="text" placeholder="Option C" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">Option D</label>
+                                                <div class="col-md-9">
+                                                    <input name="D" type="text" placeholder="Option D" class="form-control">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">True Answer</label>
+                                                <div class="col-md-9">
+                                                    <input name="answer" type="text" placeholder="True Answer" class="form-control">
+                                                </div>
+                                            </div>
+                                            <!-- Form actions -->
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #326982; color: white">Submit</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+
+                                <div class="tab-pane fade in" id="Delete">
+                                    <h3><class style="color:#33747a"><b>DELETE Quiz</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/DisplayQuiz" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Category</label>
+                                                <div class="col-md-9">
+                                                    <select name="catagory" class="form-control">
+                                                        <option>Mathematics</option>
+                                                        <option>Chemistry</option>
+                                                        <option>Physics</option>
+                                                        <option>Biological Sciences</option>
+                                                        <option>Logical Reasoning</option>
+                                                        <option>Analytical Thinking</option>
+                                                        <option>Computer Science</option>
+                                                        <option>Problem Solving</option>
+                                                        <option>General Knowledge</option>
+                                                        <option>Communication Skills</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #326982; color: white">Show Question</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <form class="form-horizontal" action="/Admin/deleteQuiz" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">ID</label>
+                                                <div class="col-md-9">
+                                                    <input name="del" type="number" placeholder="Statement ID" class="form-control">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #326982; color: white">Delete</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                    <div>
+                                        @if (@Model != null)
+                                        {
+                                            <table border="1">
+                                                <tr> <th>ID</th><th>Statement</th></tr>
+                                                <tr>
+                                                    @foreach (var li in @Model)
+                                                    {
+                                                    <tr>
+                                                        <td>@li.Id</td>
+                                                        <td>@li.statement</td>
+                                                    </tr>
+
+                                                    }
+                                             </table>
+                                        }
+
+                                    </div>
+                                   
+                                </div>
+                                <div class="tab-pane fade in" id="Update">
+                                    <h3><class style="color:#33747a"><b>UPDATE Quiz</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/DisplayQuiz" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Category</label>
+                                                <div class="col-md-9">
+                                                    <select name="catagory" class="form-control">
+                                                        <option>Mathematics</option>
+                                                        <option>Chemistry</option>
+                                                        <option>Physics</option>
+                                                        <option>Biological Sciences</option>
+                                                        <option>Logical Reasoning</option>
+                                                        <option>Analytical Thinking</option>
+                                                        <option>Computer Science</option>
+                                                        <option>Problem Solving</option>
+                                                        <option>General Knowledge</option>
+                                                        <option>Communication Skills</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #326982; color: white">Show Question</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <form class="form-horizontal" action="/Admin/UpdateQuiz" method="post">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">ID</label>
+                                                <div class="col-md-9">
+                                                    <input name="id" type="number" placeholder="Statement ID" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">Question</label>
+                                                <div class="col-md-9">
+                                                    <input name="statement" type="text" placeholder="Question Statement" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Email input-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Adress">Option A</label>
+                                                <div class="col-md-9">
+                                                    <input name="A" type="text" placeholder="Option A" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="City">Option B</label>
+                                                <div class="col-md-9">
+                                                    <input name="B" type="text" placeholder="Option B" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">Option C</label>
+                                                <div class="col-md-9">
+                                                    <input name="C" type="text" placeholder="Option C" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">Option D</label>
+                                                <div class="col-md-9">
+                                                    <input name="D" type="text" placeholder="Option D" class="form-control">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="URL">True Answer</label>
+                                                <div class="col-md-9">
+                                                    <input name="answer" type="text" placeholder="True Answer" class="form-control">
+                                                </div>
+                                            </div>
+                                            <!-- Form actions -->
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #326982; color: white">Submit</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <div>
+                                        @if (@Model != null)
+                                        {
+                                            <table border="1">
+                                                <tr> <th>ID</th><th>Statement</th></tr>
+                                                <tr>
+                                                    @foreach (var li in @Model)
+                                                    {
+                                                    <tr>
+                                                        <td>@li.Id</td>
+                                                        <td>@li.statement</td>
+                                                    </tr>
+
+                                                    }
+                                                </table>
+                                        }
+
+                                    </div>
+
+</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab v3 -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>

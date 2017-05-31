@@ -1,0 +1,385 @@
+﻿@model List<Career_Counselling.Models.Institute>
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/jquery-3.2.0.js"></script>
+
+<script>
+    /*    $(document).ready(function () {
+            $(document).on("blur", "#instituteId", function () {
+
+                var e = $("#instituteId").val();
+
+                var serviceURL = '/Home/instituteUpdate';
+
+                $.ajax({
+                    type: "POST",
+                    url: serviceURL,
+                    dataType: "json",
+                    data: { 'instituteId': e },
+                    success: successFunc,
+                    error: errorFunc
+                });
+
+                function successFunc(data) {
+                    alert("Getting Data");
+                    if (data == "0") {
+                        $("#reg").show("slow");
+                        $("#showUserName").hide("slow");
+
+                    }
+                    else {
+                        $("#reg").hide("slow");
+                        $("#showUserName").show("slow");
+
+                    }
+                }
+                function errorFunc(xhr, status, err) {
+                    alert('error');
+                }
+
+            });
+        });
+        */
+</script>
+
+<div id="content">
+    <div class="container background-white">
+        <div class="row margin-vert-40">
+
+            <div class="col-md-12">
+                <h2 class="margin-bottom-30">Manage Institute</h2>
+                <!-- Accordion -->
+                <!-- Tab v3 -->
+                <div class="row tabs">
+                    <div class="col-sm-2">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a href="#Add" data-toggle="tab">
+                                    Add Institute
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#Delete" data-toggle="tab">
+                                    Delete Institute
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#Update" data-toggle="tab">
+                                    Update Institute
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Disclaimer -->
+                    <div class="col-sm-7">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Add">
+
+                                <h3><class style="color:#33747a"><b>ADD Institute</b></h3></br></class></h3>
+                                @using (Html.BeginForm("AddInstitute", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                  <!--  <form class="form-horizontal" action="/Home/AddInstitute" method="post">-->
+                                    <fieldset>
+                                        <!-- Name input-->
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="name">Name</label>
+                                            <div class="col-md-9">
+                                                <!--  Html.TextBox("instituteName", null, new { placeholder = "Institute Name", type = "text", required = "Required", class = "form-control " })-->
+                                                <input id="name" name="instituteName" type="text" placeholder="Institute Name" class="form-control">
+                                                <br />
+                                            </div>
+                                        </div>
+
+                                        <!-- Email input
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Adress">Address</label>
+                                            <div class="col-md-9">
+                                                <input id="email" name="email" type="text" placeholder="Address" class="form-control">
+                                            </div>
+                                        </div>
+                                            -->
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="City">City</label>
+                                            <div class="col-md-9">
+                                                <!--    Html.TextBox("instituteCity", null, new { placeholder = "City", type = "text", required = "Required", class = "form-control " })-->
+                                                <input id="city" name="instituteCity" type="text" placeholder="City" class="form-control">
+                                                <br />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province">Province</label>
+                                            <div class="col-md-9">
+                                                <select name="instituteProvince" class="form-control">
+                                                    <option>Punjab</option>
+                                                    <option>Sindh</option>
+                                                    <option>Balochistan</option>
+                                                    <option>Khyber Pakhtunkhwa</option>
+                                                    <option>Azad Kashmir</option>
+                                                    <option>Gilgit–Baltistan</option>
+                                                    <option>Islamabad</option>
+                                                </select>
+                                                <br />
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province"> Sector</label>
+                                            <div class="col-md-9">
+                                                <select name="instituteSector" class="form-control">
+                                                    <option>Public</option>
+                                                    <option>Private</option>
+
+                                                </select>
+                                                <br />
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province"> Discipline</label>
+                                            <div class="col-md-9">
+                                                <select name="instituteDiscipline" class="form-control">
+                                                    <option>General</option>
+                                                    <option>Medical</option>
+                                                    <option>Engineering & Technology</option>
+                                                </select>
+                                                <br />
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="URL">URL Address</label>
+                                            <div class="col-md-9">
+                                                <!--   Html.TextBox("instituteUrl", null, new { placeholder = "URL Address", type = "text", required = "Required", class = "form-control " })-->
+                                                <input id="email" name="instituteUrl" type="text" placeholder="URL Address" class="form-control">
+                                                <br />
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Institute Logo</label>
+                                            <div class="col-md-9">
+
+                                                <input name="logo" required="Required" type="file" accept="image/*">
+                                                <p>logo Size Should be 100*100</p>
+                                                <br />
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- Form actions -->
+                                        <div class="form-group">
+                                            <div class="col-md-12 widget-right">
+                                                <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Add Institute</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                }
+
+                            </div>
+
+                            <div class="tab-pane fade in" id="Delete">
+                                <h3><class style="color:#33747a"><b>DELETE Institute</b></h3></br></class></h3>
+
+                                <form class="form-horizontal" action="/Admin/deleteInstitute" method="post">
+                                    <fieldset>
+                                        <!-- Name input-->
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="name">ID</label>
+                                            <div class="col-md-9">
+                                                <input id="name" name="delInstituteId" type="number" placeholder="Institute ID " class="form-control">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-12 widget-right">
+                                                <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Delete</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <form class="form-horizontal" action="/Admin/DisplayAllInstitute" method="post">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <div class="col-md-12 left">
+                                                <button type="submit" class="btn btn-default btn-md pull-left" style="background-color: #33747a; color: white">Display All Institute</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <div>
+                                    @if (@Model != null)
+                                    {
+                                        <table class="form-horizontal" border="1">
+                                            <tr> <th>ID</th><th>Name</th><th>Province</th><th>City</th><th>Sector</th><th>Displine</th><th>URL</th></tr>
+                                            <tr>
+                                                @foreach (var li in @Model)
+                                                {
+                                                <tr>
+                                                    <td>@li.Id</td>
+                                                    <td>@li.name</td>
+                                                    <td>@li.province</td>
+                                                    <td>@li.city</td>
+                                                    <td>@li.sector</td>
+                                                    <td>@li.discipline</td>
+                                                    <td>@li.url</td>
+                                                </tr>
+                                                }
+                                            </table>
+
+                                    }
+                                </div>
+
+                            </div>
+
+
+                            <div class="tab-pane fade in" id="Update">
+                                <h3><class style="color:#33747a"><b>UPDATE Institute</b></h3></br></class></h3>
+
+                                @using (Html.BeginForm("UpdateInstitute", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <!--<form class="form-horizontal" action="/Home/UpdateInstitute" method="post">-->
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="name">ID</label>
+                                            <div class="col-md-9">
+                                                <input id="instituteId" name="id" type="number" placeholder="Institute ID" class="form-control">
+                                            </div>
+                                            <br />
+                                            <br />
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="name">Name</label>
+                                            <div class="col-md-9">
+                                                <input id="name" name="nameIns" type="text" placeholder="Institute Name" class="form-control">
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="City">City</label>
+                                            <div class="col-md-9">
+                                                <input id="email" name="city" type="text" placeholder="City" class="form-control">
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province">Province</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" name="province">
+                                                    <option>Punjab</option>
+                                                    <option>Sindh</option>
+                                                    <option>Balochistan</option>
+                                                    <option>Khyber Pakhtunkhwa</option>
+                                                    <option>Azad Kashmir</option>
+                                                    <option>Gilgit–Baltistan</option>
+                                                    <option>Islamabad</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province"> Sector</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" name="sector">
+                                                    <option>Public</option>
+                                                    <option>Private</option>
+
+                                                </select>
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="Province"> Discipline</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" name="discipline">
+                                                    <option>General</option>
+                                                    <option>Medical</option>
+                                                    <option>Engineering & Technology</option>
+                                                </select>
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="URL">URL Address</label>
+                                            <div class="col-md-9">
+                                                <input id="email" name="url" type="text" placeholder="URL Address" class="form-control">
+                                            </div>
+                                            <br />
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Institute Logo</label>
+                                            <div class="col-md-9">
+                                                <input name="logo" required="Required" type="file" accept="image/*">
+                                                <p>logo Size Should be 100*100</p>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <!-- Form actions -->
+                                        <div class="form-group">
+                                            <div class="col-md-12 widget-right">
+                                                <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Update</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                }
+                                <form class="form-horizontal" action="/Admin/DisplayAllInstitute" method="post">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <div class="col-md-12 left">
+                                                <button type="submit" class="btn btn-default btn-md pull-left" style="background-color: #33747a; color: white">Display All Institute</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                                <div>
+                                    @if (@Model != null)
+                                    {
+                                        <table class="form-horizontal" border="1">
+                                            <tr> <th>ID</th><th>Name</th><th>Province</th><th>City</th><th>Sector</th><th>Displine</th><th>URL</th></tr>
+                                            <tr>
+                                                @foreach (var li in @Model)
+                                                {
+                                                <tr>
+                                                    <td>@li.Id</td>
+                                                    <td>@li.name</td>
+                                                    <td>@li.province</td>
+                                                    <td>@li.city</td>
+                                                    <td>@li.sector</td>
+                                                    <td>@li.discipline</td>
+                                                    <td>@li.url</td>
+                                                </tr>
+                                                }
+                                            </table>
+
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab v3 -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,374 @@
+﻿@model List<Career_Counselling.Models.Degree>
+
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Title -->
+
+    <title>Manage Degree</title>
+
+</head>
+<body>
+    <div id="content">
+        <div class="container background-white">
+            <div class="row margin-vert-40">
+
+                <div class="col-md-12">
+                    <h2 class="margin-bottom-30">Manage Degree</h2>
+                    <!-- Accordion -->
+                    <!-- Tab v3 -->
+                    <div class="row tabs">
+                        <div class="col-sm-2">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li>
+                                    <a href="#Add" data-toggle="tab">
+                                        Add Degree
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#Delete" data-toggle="tab">
+                                        Delete Degree
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#Update" data-toggle="tab">
+                                        Update Degree
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <!-- Disclaimer -->
+                        <div class="col-sm-7">
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="Add">
+
+                                    <h3><class style="color:#33747a"><b>ADD Degree</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/AddDegree" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">Name</label>
+                                                <div class="col-md-9">
+                                                    <select name="degreeSelected" class="form-control">
+                                                        <option>Select Degree </option>
+                                                        <option>Chemical Engineering</option>
+                                                        <option>Mechanical Engineering</option>
+                                                        <option>Civil Engineering</option>
+                                                        <option>Computer Engineering</option>
+                                                        <option>Electrical Engineering</option>
+                                                        <option>Petrolium and Gas Engineering</option>
+                                                        <option>Textile Engineering</option>
+                                                        <option>Industry and Manufacturing Engineering</option>
+                                                        <option>Environmental Engineering</option>
+                                                        <option>BS (Physics)</option>
+                                                        <option>BS (Mathematics)</option>
+                                                        <option>BS (Chemistry)</option>
+                                                        <option>BS (Computer Science)</option>
+                                                        <option>BS (Information Technology)</option>
+                                                        <option>BS (Software Engineering)</option>
+                                                        <option>BS (Space Sciences)</option>
+                                                        <option>BS (High Energy Physics)</option>
+                                                        <option>BS (Computational Physics)</option>
+                                                        <option>BS (English)</option>
+                                                        <option>BS (Political Science)</option>
+                                                        <option>BS (Communication Studies)</option>
+                                                        <option>BS (Philosophy)</option>
+                                                        <option>BS (Geography)</option>
+                                                        <option>BBA</option>
+                                                        <option>BS (Statistics)</option>
+                                                        <option>B.Com</option>
+                                                        <option>BBIT(Hons)</option>
+                                                        <option>BSc (Accounting)</option>
+                                                        <option>BBS (Bacheler of Business Studies)</option>
+                                                        <option>BS (Economics)</option>
+                                                        <option>BS (Mass Communication)</option>
+                                                        <option>MBBS</option>
+                                                        <option>D-Pharmacy</option>
+                                                        <option>BS (Botany)</option>
+                                                        <option>BS (Zoology)</option>
+                                                        <option>BS (Biochemistry)</option>
+                                                        <option>BS (Physiotherapy)</option>
+                                                        <option>Dr of Nutrition Science</option>
+                                                        <option>BS (Nursing)</option>
+                                                        <option>BS (Microbiology)</option>
+                                                        <option>BS (Agriculture)</option>
+                                                        <option>BS (Biotechnology)</option>
+                                                        <option>BS (Psychology)</option>
+                                                        <option>BS (Biogenetics)</option>
+                                                        <option>BDS (Bachelor of Dental Surgery)</option>
+                                                        <option>BS (Doctor of Vaterinary Medicine)</option>
+                                                        <option>BS (Environmental Science)</option>
+                                                        <option>LLB (5 Years)</option>
+                                                        <option>BA (Journalism)</option>
+                                                        <option>B.Architecture</option>
+                                                        <option>BFA Painting</option>
+                                                        <option>BA (Fine Arts)</option>
+                                                        <option>BA (Hons)History</option>
+                                                        <option>BFA Graphic Design</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Duration</label>
+                                                <div class="col-md-9">
+                                                    <select name="durationSelected" class="form-control">
+                                                        <option>Select Duration</option>
+                                                        <option>2 Years</option>
+                                                        <option>4 Years</option>
+                                                        <option>5 Years</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Overview</label>
+                                                <div class="col-md-9">
+                                                    <input name="Addsummary" type="text" placeholder="Degree Overview" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Pre Requisites</label>
+                                                <div class="col-md-9">
+                                                    <input name="pre" type="text" placeholder="Degree Prereuisites" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Opportunities</label>
+                                                <div class="col-md-9">
+                                                    <input name="opport" type="text" placeholder="Degree Opportunities" class="form-control">
+                                                </div>
+                                            </div>
+                                            <!-- Form actions -->
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Add Degee</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+
+                                <div class="tab-pane fade in" id="Delete">
+                                    <h3><class style="color:#33747a"><b>DELETE Degree</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/deleteDegree" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">ID</label>
+                                                <div class="col-md-9">
+                                                    <input name="delDegreeID" type="text" placeholder="Degree ID" class="form-control">
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Delete</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+
+                                    <form class="form-horizontal" action="/Admin/DisplayAllDegrees" method="post">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <div class="col-md-12 left">
+                                                    <button type="submit" class="btn btn-default btn-md pull-left" style="background-color: #33747a; color: white">Display All Degree</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                    <div>
+                                        @if (@Model != null)
+                                        {
+                                            <table border="1">
+                                                <tr> <th>ID</th><th>Name</th><th>Duration</th></tr>
+                                                <tr>
+                                                    @foreach (var li in @Model)
+                                                    {
+                                                    <tr>
+                                                        <td>@li.Id</td>
+                                                        <td>@li.name</td>
+                                                        <td>@li.duration</td>
+
+                                                    </tr>
+
+                                                    }
+                                                </table>
+                                        }
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade in" id="Update">
+                                    <h3><class style="color:#33747a"><b>UPDATE Degree</b></h3></br></class></h3>
+
+                                    <form class="form-horizontal" action="/Admin/UpdateDegree" method="post">
+                                        <fieldset>
+                                            <!-- Name input-->
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">ID</label>
+                                                <div class="col-md-9">
+                                                    <input id="name" name="degreeId" type="number" placeholder="Degree ID " class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="name">Name</label>
+                                                <div class="col-md-9">
+                                                    <select name="degree" class="form-control">
+                                                        <option>Select Degree </option>
+                                                        <option>Chemical Engineering</option>
+                                                        <option>Mechanical Engineering</option>
+                                                        <option>Civil Engineering</option>
+                                                        <option>Computer Engineering</option>
+                                                        <option>Electrical Engineering</option>
+                                                        <option>Petrolium and Gas Engineering</option>
+                                                        <option>Textile Engineering</option>
+                                                        <option>Industry and Manufacturing Engineering</option>
+                                                        <option>Environmental Engineering</option>
+                                                        <option>BS (Physics)</option>
+                                                        <option>BS (Mathematics)</option>
+                                                        <option>BS (Chemistry)</option>
+                                                        <option>BS (Computer Science)</option>
+                                                        <option>BS (Information Technology)</option>
+                                                        <option>BS (Software Engineering)</option>
+                                                        <option>BS (Space Sciences)</option>
+                                                        <option>BS (High Energy Physics)</option>
+                                                        <option>BS (Computational Physics)</option>
+                                                        <option>BS (English)</option>
+                                                        <option>BS (Political Science)</option>
+                                                        <option>BS (Communication Studies)</option>
+                                                        <option>BS (Philosophy)</option>
+                                                        <option>BS (Geography)</option>
+                                                        <option>BBA</option>
+                                                        <option>BS (Statistics)</option>
+                                                        <option>B.Com</option>
+                                                        <option>BBIT(Hons)</option>
+                                                        <option>BSc (Accounting)</option>
+                                                        <option>BBS (Bacheler of Business Studies)</option>
+                                                        <option>BS (Economics)</option>
+                                                        <option>BS (Mass Communication)</option>
+                                                        <option>MBBS</option>
+                                                        <option>D-Pharmacy</option>
+                                                        <option>BS (Botany)</option>
+                                                        <option>BS (Zoology)</option>
+                                                        <option>BS (Biochemistry)</option>
+                                                        <option>BS (Physiotherapy)</option>
+                                                        <option>Dr of Nutrition Science</option>
+                                                        <option>BS (Nursing)</option>
+                                                        <option>BS (Microbiology)</option>
+                                                        <option>BS (Agriculture)</option>
+                                                        <option>BS (Biotechnology)</option>
+                                                        <option>BS (Psychology)</option>
+                                                        <option>BS (Biogenetics)</option>
+                                                        <option>BDS (Bachelor of Dental Surgery)</option>
+                                                        <option>BS (Doctor of Vaterinary Medicine)</option>
+                                                        <option>BS (Environmental Science)</option>
+                                                        <option>LLB (5 Years)</option>
+                                                        <option>BA (Journalism)</option>
+                                                        <option>B.Architecture</option>
+                                                        <option>BFA Painting</option>
+                                                        <option>BA (Fine Arts)</option>
+                                                        <option>BA (Hons)History</option>
+                                                        <option>BFA Graphic Design</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Duration</label>
+                                                <div class="col-md-9">
+                                                    <select class="form-control" name="duration">
+                                                        <option>Select Duration</option>
+                                                        <option>2 Years</option>
+                                                        <option>4 Years</option>
+                                                        <option>5 Years</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Overview</label>
+                                                <div class="col-md-9">
+                                                    <input name="UPsummary" type="text" placeholder="Degree Detail" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Pre Requisites</label>
+                                                <div class="col-md-9">
+                                                    <input name="pre" type="text" placeholder="Degree Prereuisites" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="Province"> Opportunities</label>
+                                                <div class="col-md-9">
+                                                    <input name="opport" type="text" placeholder="Degree Opportunities" class="form-control">
+                                                </div>
+                                            </div>
+
+                                            <!-- Form actions -->
+                                            <div class="form-group">
+                                                <div class="col-md-12 widget-right">
+                                                    <button type="submit" class="btn btn-default btn-md pull-right" style="background-color: #33747a; color: white">Update</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                    <form class="form-horizontal" action="/Admin/DisplayAllDegrees" method="post">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <div class="col-md-12 left">
+                                                    <button type="submit" class="btn btn-default btn-md pull-left" style="background-color: #33747a; color: white">Display All Degree</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+
+                                    <div>
+                                        @if (@Model != null)
+                                        {
+                                            <table border="1">
+                                                <tr> <th>ID</th><th>Name</th><th>Duration</th></tr>
+                                                <tr>
+                                                    @foreach (var li in @Model)
+                                                    {
+                                                    <tr>
+                                                        <td>@li.Id</td>
+                                                        <td>@li.name</td>
+                                                        <td>@li.duration</td>
+
+                                                    </tr>
+
+                                                    }
+                                                </table>
+                                        }
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab v3 -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
